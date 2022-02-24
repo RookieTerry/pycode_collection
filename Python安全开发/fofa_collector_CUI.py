@@ -45,7 +45,7 @@ async def fofa_search(email,word,key,proxies,size):
         exit()
 
     try:
-        async with aiofiles.open("脚本生成/fofa_result.csv","w") as f:
+        async with aiofiles.open("fofa_result.csv","w") as f:
             csvwriter = csv.writer(f)
             for result in results:
                 await csvwriter.writerow(result)
