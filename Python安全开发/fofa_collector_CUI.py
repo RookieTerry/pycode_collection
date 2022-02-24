@@ -32,7 +32,7 @@ async def fofa_search(email,word,key,proxies,size):
 
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.get(url=url,headers=headers,proxies=proxies) as resp:
+            async with session.get(url=url,headers=headers,proxies=proxies,verify=False,timeout=15) as resp:
                 resp = await resp.text()
                 obj = re.compile(r'"results":(.*?),"size":',re.S)
                 results = eval(obj.findall(resp)[0])  # eval函数把字符串形式的列表转换成二维列表
