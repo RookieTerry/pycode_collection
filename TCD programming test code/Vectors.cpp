@@ -1,5 +1,5 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 std::vector findShortest(const std::vector<std::vector>& vectors)
 {
     std::vector ret;
@@ -15,3 +15,16 @@ std::vector findShortest(const std::vector<std::vector>& vectors)
     }
     return ret;
 }
+
+#ifndef RunTests
+int main()
+{
+    std::vector<std::vector> vectors{
+        { 1, 1, 1 },
+        { 2, 2, 2 },
+        { 3, 3, 3 }
+    };
+    std::vector shortest = findShortest(vectors);
+    std::cout << "x: " << shortest[0] << " y: " << shortest[1] << " z: " << shortest[2] << std::endl;
+}
+#endif
